@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#07070f">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushal Shah - Portfolio</title>
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&family=Space+Mono&display=swap"
+    rel="stylesheet" />
+  <script>
+    if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+      sessionStorage.setItem('redirectLoader', '1');
+      window.location.replace('index.html');
+    }
+  </script>
+</head>
+
+<body class="page-about">
+
+  <canvas id="grain"></canvas>
+  <canvas id="webgl"></canvas>
+  <div id="page-transition"></div>
+  <div id="cursor"></div>
+  <div id="cursor-dot"></div>
+  <canvas id="cursor-canvas"></canvas>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" data-page>KS</a>
+    <ul>
+      <li class="nav-home-mobile"><a href="index.html" data-page>Home</a></li>
+      <li><a href="about.html" class="active" data-page>About</a></li>
+      <li><a href="skills.html" data-page>Skills</a></li>
+      <li><a href="projects.html" data-page>Projects</a></li>
+      <li><a href="contact.html" data-page>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="about-main">
+
+    <!-- Hero title -->
+    <h1 class="about-hero-title">
+      <span class="about-line"><span class="about-inner">ABOUT</span></span>
+      <span class="about-line"><span class="about-inner about-stroke">ME</span></span>
+    </h1>
+
+    <!-- Identity row -->
+    <div class="about-identity">
+      <div class="avatar">
+        <img src="assets/avatar.jpg" alt="Kushal Shah" class="avatar-img" />
+        <div class="avatar-ring"></div>
+      </div>
+      <div class="about-identity-text">
+        <h2 class="about-name">Kushal Shah</h2>
+        <p class="about-role"><span id="about-typewriter"></span><span class="about-cursor">|</span></p>
+        <p class="about-bio">
+          I am a passionate IT field developer with practical knowledge of Python and web development, gained through
+          academic learning and project work, aiming to build efficient and user-friendly applications.
+        </p>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="about-section">
+      <div class="about-section-label">
+        <h3 class="section-title" data-text="EDUCATION">EDUCATION</h3>
+      </div>
+      <div class="about-section-body">
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <span class="timeline-degree">SSC — 10th Grade</span>
+                <span class="timeline-badge">98.46%</span>
+              </div>
+              <span class="timeline-org">Ultra Vision Academy School &nbsp;·&nbsp; Gujarat Board</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <span class="timeline-degree">HSC — 12th Grade</span>
+                <span class="timeline-badge">78%</span>
+              </div>
+              <span class="timeline-org">Ultra Vision Academy School &nbsp;·&nbsp; Gujarat Board</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <span class="timeline-degree">Bachelor of Engineering</span>
+                <span class="timeline-badge">6.8+</span>
+              </div>
+              <span class="timeline-org">Lok Jagruti University &nbsp;·&nbsp; 2024 – 2028</span>
+              <ul class="timeline-points">
+                <li>Building Strong Foundations</li>
+                <li>Developing real-world Projects</li>
+                <li>Actively Improving problem-solving skills</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/about.js"></script>
+  <script>
+    const aboutRoles = ['Web Developer', 'Python Developer', 'UI Designer', 'Problem Solver'];
+    let ari = 0, aci = 0, adeleting = false;
+    const ael = document.getElementById('about-typewriter');
+    function aboutType() {
+      if (!ael) return;
+      const word = aboutRoles[ari];
+      if (!adeleting) {
+        ael.textContent = word.slice(0, ++aci);
+        if (aci === word.length) { adeleting = true; setTimeout(aboutType, 1400); return; }
+        setTimeout(aboutType, 90);
+      } else {
+        ael.textContent = word.slice(0, --aci);
+        if (aci === 0) { adeleting = false; ari = (ari + 1) % aboutRoles.length; }
+        setTimeout(aboutType, 40);
+      }
+    }
+    setTimeout(aboutType, 600);
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#07070f">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushal Shah - Portfolio</title>
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet" />
+  <script>
+    if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+      sessionStorage.setItem('redirectLoader', '1');
+      window.location.replace('index.html');
+    }
+  </script>
+</head>
+<body class="page-projects">
+
+  <canvas id="grain"></canvas>
+  <canvas id="webgl"></canvas>
+  <div id="page-transition"></div>
+  <div id="cursor"></div>
+  <div id="cursor-dot"></div>
+  <canvas id="cursor-canvas"></canvas>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" data-page>KS</a>
+    <ul>
+      <li class="nav-home-mobile"><a href="index.html" data-page>Home</a></li>
+      <li><a href="about.html" data-page>About</a></li>
+      <li><a href="skills.html" data-page>Skills</a></li>
+      <li><a href="projects.html" class="active" data-page>Projects</a></li>
+      <li><a href="contact.html" data-page>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="projects-main">
+    <h1 class="page-title">
+      <span class="title-line"><span class="title-inner">MY</span></span>
+      <span class="title-line"><span class="title-inner title-stroke">PROJECTS</span></span>
+    </h1>
+
+    <div class="projects-list">
+
+      <a href="https://joyspoon-sooty.vercel.app/" target="_blank" rel="noopener" class="proj-card">
+        <div class="proj-num">01</div>
+        <div class="proj-body">
+          <div class="proj-header">
+            <h2>Joyspoon</h2>
+            <div class="proj-tags">
+              <span>Web App</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+          <p>A web application delivering delightful food experiences with a clean UI and smooth interactions for an engaging user journey.</p>
+          <div class="proj-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript</div>
+        </div>
+        <div class="proj-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+      <a href="https://brts-app-7yiwjohpqoar3mu8j5pzie.streamlit.app/" target="_blank" rel="noopener" class="proj-card">
+        <div class="proj-num">02</div>
+        <div class="proj-body">
+          <div class="proj-header">
+            <h2>BRTS Portal</h2>
+            <div class="proj-tags">
+              <span>Portal</span>
+              <span>Full Stack</span>
+            </div>
+          </div>
+          <p>A Bus Rapid Transit System portal streamlining public transport information, route management, and passenger experience.</p>
+          <div class="proj-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; Backend</div>
+        </div>
+        <div class="proj-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+      <a href="index.html" class="proj-card">
+        <div class="proj-num">03</div>
+        <div class="proj-body">
+          <div class="proj-header">
+            <h2>Portfolio Website</h2>
+            <div class="proj-tags">
+              <span>Portfolio</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+          <p>A personal portfolio website showcasing projects, skills, and experience with a modern dark theme, 3D backgrounds, and smooth animations.</p>
+          <div class="proj-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; Three.js</div>
+        </div>
+        <div class="proj-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#07070f">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushal Shah - Portfolio</title>
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet" />
+  <script>
+    if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+      sessionStorage.setItem('redirectLoader', '1');
+      window.location.replace('index.html');
+    }
+  </script>
+</head>
+<body class="page-contact">
+
+  <canvas id="grain"></canvas>
+  <canvas id="webgl"></canvas>
+  <div id="page-transition"></div>
+  <div id="cursor"></div>
+  <div id="cursor-dot"></div>
+  <canvas id="cursor-canvas"></canvas>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" data-page>KS</a>
+    <ul>
+      <li class="nav-home-mobile"><a href="index.html" data-page>Home</a></li>
+      <li><a href="about.html" data-page>About</a></li>
+      <li><a href="skills.html" data-page>Skills</a></li>
+      <li><a href="projects.html" data-page>Projects</a></li>
+      <li><a href="contact.html" class="active" data-page>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-main">
+
+    <h1 class="page-title">
+      <span class="title-line"><span class="title-inner">LET'S</span></span>
+      <span class="title-line"><span class="title-inner title-stroke">CONNECT</span></span>
+    </h1>
+
+    <div class="contact-list">
+
+      <div class="contact-row contact-row-static" data-copy="+91 9558326324">
+        <div class="cr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="cr-info">
+          <span class="cr-label">Phone</span>
+          <span class="cr-value">+91 9558326324</span>
+        </div>
+      </div>
+
+      <div class="contact-row contact-row-static" data-copy="kushalkshah1606@gmail.com">
+        <div class="cr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="cr-info">
+          <span class="cr-label">Email</span>
+          <span class="cr-value">kushalkshah1606@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="contact-row contact-row-static" data-copy="linkedin.com/in/kushal-shah-7282b6307">
+        <div class="cr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="cr-info">
+          <span class="cr-label">LinkedIn</span>
+          <span class="cr-value">linkedin.com/in/kushal-shah-7282b6307</span>
+        </div>
+      </div>
+
+      <a href="resume.pdf" target="_blank" rel="noopener" class="contact-row resume-row">
+        <div class="cr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9,15 12,18 15,15"/></svg>
+        </div>
+        <div class="cr-info">
+          <span class="cr-label">Resume</span>
+          <span class="cr-value">Download CV</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Message Form -->
+    <form class="contact-form" id="contactForm">
+      <div class="cf-label">Send me a message</div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label class="cf-field-label">Your Name</label>
+          <input type="text" id="cfName" class="cf-input" placeholder="John Doe" required />
+        </div>
+        <div class="cf-field">
+          <label class="cf-field-label">Your Email</label>
+          <input type="email" id="cfEmail" class="cf-input" placeholder="john@example.com" required />
+        </div>
+      </div>
+      <div class="cf-field">
+        <label class="cf-field-label">Message</label>
+        <textarea id="cfMessage" class="cf-input cf-textarea" placeholder="Your question, feedback or message..." required></textarea>
+      </div>
+      <button type="submit" class="cf-btn">
+        <span>Send Message</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      </button>
+    </form>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/contact.js"></script>
+  <script>
+    // Copy on click
+    const toast = document.createElement('div');
+    toast.id = 'copy-toast';
+    toast.style.cssText = `
+      position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px);
+      background:rgba(14,14,26,0.95); border:1px solid rgba(200,184,162,0.3);
+      color:#c8b8a2; font-family:'Space Mono',monospace; font-size:0.6rem;
+      letter-spacing:0.2em; text-transform:uppercase; padding:10px 24px;
+      border-radius:2px; opacity:0; transition:opacity 0.3s, transform 0.3s;
+      pointer-events:none; z-index:9999;
+    `;
+    document.body.appendChild(toast);
+
+    document.querySelectorAll('[data-copy]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        navigator.clipboard.writeText(el.dataset.copy).then(() => {
+          toast.textContent = 'Copied!';
+          toast.style.opacity = '1';
+          toast.style.transform = 'translateX(-50%) translateY(0)';
+          clearTimeout(toast._t);
+          toast._t = setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(20px)';
+          }, 1800);
+        });
+      });
+    });
+
+    // Form submit — opens Gmail with prefilled message
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('cfName').value.trim();
+      const email   = document.getElementById('cfEmail').value.trim();
+      const message = document.getElementById('cfMessage').value.trim();
+      const subject = encodeURIComponent(`Message from ${name} — Portfolio`);
+      const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.open(`mailto:kushalkshah1606@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    });
+  </script>
+</body>
+</html>
+
+
+
