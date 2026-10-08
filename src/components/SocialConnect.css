@@ -1,0 +1,139 @@
+/* ===== LET'S CONNECT — COMPACT SINGLE-LINE DARK GLASS BAR ===== */
+
+.social-circular-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+
+.social-circular-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* Forces single line on laptop AND mobile! */
+  width: 100%;
+}
+
+/* Individual Social Item Wrapper */
+.social-circle-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #cbd5e1;
+}
+
+/* Compact Glass Circle */
+.circle-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(14, 16, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 5;
+  color: var(--item-accent, #ffffff);
+}
+
+/* Hover Animation on Circle */
+.social-circle-item:hover .circle-icon-box {
+  transform: translateY(-8px) scale(1.08);
+  border-color: var(--item-accent, #ffffff);
+  background: rgba(20, 24, 40, 0.95);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.5), 
+    0 0 15px var(--item-accent, rgba(255, 255, 255, 0.25));
+}
+
+/* HOVER TOOLTIP FLOATING CARD */
+.circle-hover-tooltip {
+  position: absolute;
+  bottom: -52px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px) scale(0.92);
+  background: rgba(14, 16, 28, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 6px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 20;
+}
+
+/* Show Tooltip on Hover */
+.social-circle-item:hover .circle-hover-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.tooltip-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tooltip-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+/* RESPONSIVE FOR MOBILE (Maintains 1 row on mobile screens too!) */
+@media (max-width: 600px) {
+  .social-circular-row {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .circle-icon-box {
+    width: 44px;
+    height: 44px;
+    border-width: 1px;
+  }
+
+  .circle-icon-box svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .social-circular-row {
+    gap: 8px;
+  }
+
+  .circle-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .circle-icon-box svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,198 @@
+/* ===== VS CODE EDITOR MOCKUP ===== */
+
+.vscode-editor-card {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 560px !important;
+  min-height: 370px !important;
+  background: rgba(13, 14, 22, 0.92) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 0 0 1px rgba(99, 102, 241, 0.08) !important;
+  font-family: 'Space Mono', Consolas, 'Fira Code', Monaco, monospace !important;
+  text-align: left !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease !important;
+  position: relative !important;
+}
+
+/* Subtle top glow line */
+.vscode-editor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), rgba(56, 189, 248, 0.6), transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.vscode-editor-card:hover {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(99, 102, 241, 0.08) !important;
+}
+
+/* Title bar */
+.vscode-titlebar {
+  background: rgba(8, 9, 16, 0.95) !important;
+  padding: 10px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.vscode-controls {
+  display: flex !important;
+  gap: 7px !important;
+}
+
+.vscode-controls .control {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease !important;
+}
+
+.vscode-editor-card:hover .vscode-controls .control {
+  transform: scale(1.1);
+}
+
+.vscode-controls .close    { background: #ff5f56 !important; box-shadow: 0 0 6px rgba(255, 95, 86, 0.5) !important; }
+.vscode-controls .minimize { background: #ffbd2e !important; box-shadow: 0 0 6px rgba(255, 189, 46, 0.5) !important; }
+.vscode-controls .maximize { background: #27c93f !important; box-shadow: 0 0 6px rgba(39, 201, 63, 0.5) !important; }
+
+.vscode-filename {
+  font-size: 0.76rem !important;
+  color: #94a3b8 !important;
+  margin-left: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-weight: 500 !important;
+}
+
+.vscode-spacer {
+  flex: 1 !important;
+}
+
+/* Editor Body */
+.vscode-editor-body {
+  display: flex !important;
+  padding: 14px 4px !important;
+  font-size: 0.84rem !important;
+  line-height: 1.5 !important;
+  min-height: 310px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Line Numbers */
+.vscode-line-numbers {
+  text-align: right !important;
+  padding: 0 12px 0 8px !important;
+  color: #64748b !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+  user-select: none !important;
+  flex-shrink: 0 !important;
+}
+
+.line-num {
+  font-size: 0.8rem !important;
+  height: 1.45rem !important;
+  line-height: 1.45rem !important;
+}
+
+/* Code Content Area - Strictly Locked Box */
+.vscode-code {
+  flex: 1 !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  white-space: pre !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  display: block !important;
+}
+
+.vscode-code code {
+  font-family: inherit !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+.code-line {
+  height: 1.45rem !important;
+  line-height: 1.45rem !important;
+  font-size: 0.8rem !important;
+  display: block !important;
+  white-space: pre !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+/* Blinking Cursor */
+.vscode-cursor {
+  color: #38bdf8 !important;
+  font-weight: bold !important;
+  animation: blink 0.8s infinite !important;
+  display: inline-block !important;
+  margin-left: 2px !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* RESPONSIVE FIX FOR MOBILE (Full Width Locked Container Right From Start) */
+@media (max-width: 600px) {
+  .vscode-editor-card {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 280px !important;
+    box-sizing: border-box !important;
+  }
+  .vscode-editor-body {
+    font-size: 0.64rem !important;
+    min-height: 240px !important;
+    padding: 10px 4px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .line-num, .code-line {
+    font-size: 0.64rem !important;
+    height: 1.2rem !important;
+    line-height: 1.2rem !important;
+  }
+  .vscode-line-numbers {
+    padding: 0 6px 0 4px !important;
+  }
+  .vscode-code {
+    padding: 0 6px !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

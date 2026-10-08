@@ -1,88 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" style="background:#07070f">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kushal Shah - Portfolio</title>
-  <link rel="stylesheet" href="css/shared.css" />
-  <link rel="stylesheet" href="css/home.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&family=Space+Mono&display=swap"
-    rel="stylesheet" />
-</head>
-
-<body class="page-home">
-
-  <canvas id="grain"></canvas>
-  <canvas id="webgl"></canvas>
-  <div id="page-transition"></div>
-  <div id="cursor"></div>
-  <div id="cursor-dot"></div>
-  <canvas id="cursor-canvas"></canvas>
-
-  <div id="loader" style="display:none">
-    <div class="loader-corner loader-corner--tl"></div>
-    <div class="loader-corner loader-corner--tr"></div>
-    <div class="loader-corner loader-corner--bl"></div>
-    <div class="loader-corner loader-corner--br"></div>
-    <div class="loader-bar" id="loaderBar"></div>
-    <div class="loader-num" id="loaderNum">000</div>
-    <div class="loader-sub">KUSHAL SHAH</div>
-  </div>
-
-  <nav id="nav">
-    <a href="index.html" class="nav-logo" data-page>KS</a>
-    <ul>
-      <li class="nav-home-mobile"><a href="index.html" data-page>Home</a></li>
-      <li><a href="about.html" data-page>About</a></li>
-      <li><a href="skills.html" data-page>Skills</a></li>
-      <li><a href="projects.html" data-page>Projects</a></li>
-      <li><a href="contact.html" data-page>Contact</a></li>
-    </ul>
-  </nav>
-
-  <main class="home-main">
-
-    <!-- Left: name block -->
-    <div class="home-left">
-      <h1>
-        <span class="line"><span class="inner">KUSHAL</span></span>
-        <span class="line"><span class="inner stroke">SHAH</span></span>
-      </h1>
-      <div class="home-role-line">
-        <p class="hero-desc"><span id="typewriter"></span><span class="cursor-blink">|</span></p>
-      </div>
-    </div>
-
-  </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="js/shared.js"></script>
-  <script src="js/home.js"></script>
-  <script>
-    const roles = ['Web Developer', 'Problem Solver', 'Python Developer', 'UI Designer'];
-    let ri = 0, ci = 0, deleting = false;
-    const el = document.getElementById('typewriter');
-    function type() {
-      if (!el) return;
-      const word = roles[ri];
-      if (!deleting) {
-        el.textContent = word.slice(0, ++ci);
-        if (ci === word.length) { deleting = true; setTimeout(type, 1400); return; }
-        setTimeout(type, 90);
-      } else {
-        el.textContent = word.slice(0, --ci);
-        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
-        setTimeout(type, 40);
-      }
-    }
-    const startDelay = document.body.classList.contains('first-load') ? 2600 : 400;
-    setTimeout(type, startDelay);
-  </script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kushal Shah - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
-
-
-

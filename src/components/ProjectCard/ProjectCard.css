@@ -1,0 +1,214 @@
+/* ===== PREMIUM PROJECT CARD — MATCHED TO UPLOADED SCREENSHOT ===== */
+
+.project-card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Force both cards to take equal height */
+  background: #cbd5e1 !important; /* EXACT dark white/slate-300 from user screenshot */
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important; /* Premium inner top lighting edge */
+  color: #0f172a !important;
+  text-decoration: none !important;
+}
+
+/* Custom ambient glows depending on project type */
+.project-card-3d.project-type-web:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.35) !important;
+  box-shadow: 
+    0 20px 40px rgba(6, 182, 212, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+.project-card-3d.project-type-portal:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.35) !important;
+  box-shadow: 
+    0 20px 40px rgba(139, 92, 246, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+.project-card-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transition: background 0.15s ease-out;
+  border-radius: 20px;
+}
+
+/* TOP PREVIEW IMAGE CONTAINER */
+.project-card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #090a10;
+}
+
+/* Aperture depth - inner shading ring on the image */
+.project-card-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 
+    inset 0 8px 16px rgba(0, 0, 0, 0.18),
+    inset 0 -8px 16px rgba(0, 0, 0, 0.18); /* Elegant skeuomorphic shadow slot */
+  pointer-events: none;
+  z-index: 3;
+  border-radius: 14px;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card-image.joyspoon-img {
+  object-position: center 95%;
+}
+
+.project-card-3d:hover .project-card-image {
+  transform: scale(1.03);
+}
+
+.project-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.35) 100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* Top Badges */
+.project-image-top-bar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.project-type-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.6px;
+  padding: 4px 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* CARD CONTENT AREA */
+.project-card-content {
+  position: relative;
+  z-index: 10;
+  padding: 12px 4px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1; /* Stretch to fill card height */
+}
+
+.project-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a !important; /* Dark text matching the screenshot */
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.project-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #334155 !important; /* Dark subtext */
+  margin: 0;
+  flex-grow: 1; /* Fill remaining height, pushing tech stack badges to the bottom */
+}
+
+/* Tech Badges — Refined for Slate Theme */
+.project-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.tech-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155 !important; /* Slate grey text matching card */
+  background: #f1f5f9 !important; /* Clean light slate background */
+  border: 1px solid #cbd5e1 !important; /* Border matches card bg exactly */
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  letter-spacing: 0.2px;
+}
+
+.project-card-3d:hover .tech-badge {
+  background: #ffffff !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+@media (max-width: 600px) {
+  .project-card-3d {
+    padding: 12px;
+    transform: none !important; /* Disable 3D tilt on mobile touchscreens for smooth scrolling */
+  }
+
+  .project-card-3d:hover {
+    transform: translateY(-4px) !important; /* Simple flat translation instead of 3d tilt */
+  }
+
+  .project-card-image-wrapper {
+    height: 165px;
+  }
+
+  .project-card-title {
+    font-size: 1.15rem;
+  }
+
+  .project-card-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.5;
+  }
+
+  .tech-badge {
+    font-size: 0.66rem !important;
+    padding: 3px 8px !important;
+  }
+}
