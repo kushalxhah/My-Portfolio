@@ -65,7 +65,7 @@
 }
 
 .project-card-image.joyspoon-img {
-  object-position: center 95%;
+  object-position: center 25%;
 }
 
 .project-card-3d:hover .project-card-image {
@@ -147,7 +147,7 @@
   }
 
   .project-card-image-wrapper {
-    height: 185px !important;
+    height: 175px !important;
     border-radius: 18px !important;
   }
 
@@ -155,30 +155,34 @@
     border-radius: 18px !important;
   }
 
+  .project-card-image.joyspoon-img {
+    object-position: center 25% !important;
+  }
+
   .project-card-content {
-    padding: 14px 2px 2px 2px !important;
+    padding: 12px 2px 2px 2px !important;
     gap: 8px !important;
   }
 
   .project-card-title {
-    font-size: 1.4rem !important;
+    font-size: 1.35rem !important;
     margin: 0 !important;
   }
 
   .project-card-desc {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
     color: #334155 !important;
   }
 
   .project-card-tech {
-    gap: 8px !important;
-    margin-top: 6px !important;
+    gap: 7px !important;
+    margin-top: auto !important;
   }
 
   .tech-badge {
-    font-size: 0.76rem !important;
-    padding: 5px 12px !important;
+    font-size: 0.74rem !important;
+    padding: 5px 11px !important;
     border-radius: 10px !important;
     background: #ffffff !important;
     color: #334155 !important;
