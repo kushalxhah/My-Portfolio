@@ -9,6 +9,8 @@ import MagicBentoContact from './components/MagicBentoContact.jsx'
 import ServicesGrid from './components/ServicesGrid.jsx'
 import SocialConnect from './components/SocialConnect.jsx'
 import { useRoleCycler } from './hooks/useRoleCycler.js'
+import brtsPortalImage from './assets/brts_portal.png'
+import joyspoonImg from './assets/joyspoon_mukhvas.png'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -164,8 +166,8 @@ export default function App() {
       desc: 'A digital showcase for Joyspoon, a premium Indian Mukhvas & mouth freshener brand, featuring interactive product catalog grids, sleek micro-interactions, and order inquiry flows.',
       tech: 'HTML5 · CSS3 · JavaScript',
       link: 'https://joyspoon-sooty.vercel.app/',
-      image: 'https://imgs.search.brave.com/k41K_zwZ9jFZJLIByUXdNpVZ37oKGmkdd6gzqUhBSIc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9qb3lz/cG9vbi5pbi9jZG4v/c2hvcC9maWxlcy9V/bnRpdGxlZF9kZXNp/Z25fMTYucG5nP3Y9/MTczNzgwODQ0OSZ3/aWR0aD0yMDAw',
-      fallbackImage: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=800&q=80'
+      image: joyspoonImg,
+      fallbackImage: joyspoonImg
     },
     {
       num: '02',
@@ -175,8 +177,8 @@ export default function App() {
       desc: 'A Bus Rapid Transit System management tool streamlining route planning, timing displays, and schedule operations for users.',
       tech: 'Streamlit · Python · MySQL · CSS',
       link: 'https://brts-app-7yiwjohpqoar3mu8j5pzie.streamlit.app/',
-      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
-      fallbackImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80'
+      image: brtsPortalImage,
+      fallbackImage: brtsPortalImage
     }
   ]
   const filteredProjects = projectsData.filter(
@@ -371,7 +373,7 @@ export default function App() {
         </section>
 
         {/* SECTION: PROJECTS */}
-        <section id="projects" data-section="projects" ref={projectsRef} className="section-light">
+        <section id="projects" data-section="projects" ref={projectsRef} className="section-dark">
           <div className="section-wrapper reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
             <h2 className="section-title">My Projects</h2>
             {/* Desktop / Laptop Grid Layout */}
@@ -406,8 +408,9 @@ export default function App() {
                   <div 
                     key={p.num} 
                     className={`project-stack-item ${positionClass}`}
-                    onClick={() => {
+                    onClick={(e) => {
                       if (idx !== activeProjectIdx) {
+                        e.preventDefault();
                         setActiveProjectIdx(idx);
                       }
                     }}
@@ -427,6 +430,8 @@ export default function App() {
                   </div>
                 );
               })}
+
+
             </div>
           </div>
         </section>

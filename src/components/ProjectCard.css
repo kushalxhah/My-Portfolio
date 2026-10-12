@@ -1,15 +1,15 @@
-/* ===== PREMIUM PROJECT CARD — MATCHED TO UPLOADED SCREENSHOT ===== */
+/* ===== PREMIUM PROJECT CARD — EXACT MATCH TO UPLOADED MOBILE SCREENSHOT ===== */
 
 .project-card-3d {
   position: relative;
   width: 100%;
-  height: 100%; /* Force both cards to take equal height */
-  background: #cbd5e1 !important; /* EXACT dark white/slate-300 from user screenshot */
+  height: 100%;
+  background: #cbd5e1 !important; /* Soft slate/silver card from user screenshot */
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  border-radius: 20px;
-  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 26px !important;
+  padding: 16px 16px 18px 16px;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
@@ -17,29 +17,18 @@
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
   box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important; /* Premium inner top lighting edge */
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
   color: #0f172a !important;
   text-decoration: none !important;
 }
 
-/* Custom ambient glows depending on project type */
-.project-card-3d.project-type-web:hover {
+/* Desktop Hover Effects */
+.project-card-3d:hover {
   transform: translateY(-6px);
-  border-color: rgba(6, 182, 212, 0.35) !important;
   box-shadow: 
-    0 20px 40px rgba(6, 182, 212, 0.16),
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
-}
-
-.project-card-3d.project-type-portal:hover {
-  transform: translateY(-6px);
-  border-color: rgba(139, 92, 246, 0.35) !important;
-  box-shadow: 
-    0 20px 40px rgba(139, 92, 246, 0.16),
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+    0 22px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
 .project-card-shine {
@@ -51,7 +40,7 @@
   pointer-events: none;
   z-index: 5;
   transition: background 0.15s ease-out;
-  border-radius: 20px;
+  border-radius: 26px;
 }
 
 /* TOP PREVIEW IMAGE CONTAINER */
@@ -60,21 +49,9 @@
   height: 200px;
   position: relative;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 18px !important;
   background: #090a10;
-}
-
-/* Aperture depth - inner shading ring on the image */
-.project-card-image-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: 
-    inset 0 8px 16px rgba(0, 0, 0, 0.18),
-    inset 0 -8px 16px rgba(0, 0, 0, 0.18); /* Elegant skeuomorphic shadow slot */
-  pointer-events: none;
-  z-index: 3;
-  border-radius: 14px;
+  flex-shrink: 0;
 }
 
 .project-card-image {
@@ -82,6 +59,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 18px !important;
+  display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -96,53 +75,28 @@
 .project-card-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.35) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.25) 100%);
   pointer-events: none;
   z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-/* Top Badges */
-.project-image-top-bar {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 10;
-}
-
-.project-type-badge {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #334155;
-  letter-spacing: 0.6px;
-  padding: 4px 12px;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-radius: 20px;
-  text-transform: uppercase;
+  border-radius: 18px;
 }
 
 /* CARD CONTENT AREA */
 .project-card-content {
   position: relative;
   z-index: 10;
-  padding: 12px 4px 4px 4px;
+  padding: 14px 4px 2px 4px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex-grow: 1; /* Stretch to fill card height */
+  gap: 8px;
+  flex-grow: 1;
 }
 
 .project-card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  color: #0f172a !important; /* Dark text matching the screenshot */
+  color: #0f172a !important;
   margin: 0;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -150,65 +104,84 @@
 
 .project-card-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #334155 !important; /* Dark subtext */
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #334155 !important;
   margin: 0;
-  flex-grow: 1; /* Fill remaining height, pushing tech stack badges to the bottom */
+  flex-grow: 1;
 }
 
-/* Tech Badges — Refined for Slate Theme */
+/* Tech Badges — Pure White Rounded Rectangles from Screenshot */
 .project-card-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
+  gap: 8px;
+  margin-top: 6px;
 }
 
 .tech-badge {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #334155 !important; /* Slate grey text matching card */
-  background: #f1f5f9 !important; /* Clean light slate background */
-  border: 1px solid #cbd5e1 !important; /* Border matches card bg exactly */
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  background: #ffffff !important; /* Pure solid white pill */
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  padding: 5px 13px !important;
+  border-radius: 10px !important;
   transition: all 0.25s ease;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
 }
 
 .project-card-3d:hover .tech-badge {
   background: #ffffff !important;
-  border-color: #94a3b8 !important;
   color: #0f172a !important;
 }
 
+/* MOBILE RESPONSIVE STYLING */
 @media (max-width: 600px) {
   .project-card-3d {
-    padding: 12px;
-    transform: none !important; /* Disable 3D tilt on mobile touchscreens for smooth scrolling */
-  }
-
-  .project-card-3d:hover {
-    transform: translateY(-4px) !important; /* Simple flat translation instead of 3d tilt */
+    padding: 16px 16px 18px 16px !important;
+    border-radius: 26px !important;
+    transform: none !important;
   }
 
   .project-card-image-wrapper {
-    height: 165px;
+    height: 185px !important;
+    border-radius: 18px !important;
+  }
+
+  .project-card-image {
+    border-radius: 18px !important;
+  }
+
+  .project-card-content {
+    padding: 14px 2px 2px 2px !important;
+    gap: 8px !important;
   }
 
   .project-card-title {
-    font-size: 1.15rem;
+    font-size: 1.4rem !important;
+    margin: 0 !important;
   }
 
   .project-card-desc {
-    font-size: 0.82rem !important;
-    line-height: 1.5;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    color: #334155 !important;
+  }
+
+  .project-card-tech {
+    gap: 8px !important;
+    margin-top: 6px !important;
   }
 
   .tech-badge {
-    font-size: 0.66rem !important;
-    padding: 3px 8px !important;
+    font-size: 0.76rem !important;
+    padding: 5px 12px !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    color: #334155 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
   }
 }
